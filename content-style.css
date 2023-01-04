@@ -30,7 +30,7 @@ main {
 }
 
 .img {
-    content: url(assets/images/image-web-3-mobile.jpg);
+    content: url(images/image-web-3-mobile.jpg);
 }
 
 .container-main h2 {
@@ -165,7 +165,7 @@ main {
     .img {
         grid-area: image;
         content: unset;
-        background: url(assets/images/image-web-3-desktop.jpg);
+        background: url(images/image-web-3-desktop.jpg);
         background-size: cover;
     }
 

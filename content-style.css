@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap');
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --Dark-grayish-blue: hsl(236, 52%, 18%);
+    --Soft-orange: hsl(35, 77%, 62%);
+    --Soft-red: hsl(5, 85%, 63%);
+    --Off-white: hsl(36, 100%, 99%);
+    --Grayish-blue: hsl(233, 8%, 79%);
+    --Dark-grayish-blue: hsl(236, 52%, 18%);
+    --Very-dark-blue: hsl(240, 100%, 5%);
+    font-family: Inter;
+}
+
+main,
+.container-main,
+.container-asside,
+.container-bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+main {
+    width: 90%;
+    margin: auto;
+}
+
+.img {
+    content: url(assets/images/image-web-3-mobile.jpg);
+}
+
+.container-main h2 {
+    margin: .5em auto;
+    font-size: 3em;
+    font-weight: 800;
+}
+
+.content p {
+    margin-top: 0;
+    line-height: 1.5em;
+    font-size: .9em;
+    color: var(--Dark-grayish-blue);
+}
+
+.button {
+    width: 11em;
+    background-color: var(--Soft-red);
+    padding: 1em;
+    text-align: center;
+}
+
+.button a {
+    font-size: .9em;
+    font-weight: 700;
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: .25em;
+}
+
+.container-asside {
+    margin: 3em auto;
+    background-color: var(--Very-dark-blue);
+    color: white;
+    padding: 0 1em;
+}
+
+.container-asside h2 {
+    margin: .5em 0;
+    color: var(--Soft-orange);
+    font-size: 2em;
+}
+
+.post {
+    padding: 1em 0;
+    border-bottom: 1px solid var(--Off-white);
+}
+
+.post:last-child {
+    border: 0;
+}
+
+.post h3 {
+    font-size: 1.2em;
+    font-weight: 800;
+}
+
+.post h3:first-child {
+    margin-top: 0;
+}
+
+.post p {
+    font-size: .9em;
+    color: var(--Grayish-blue);
+}
+
+.container-bottom {
+    gap: 1em;
+}
+
+.blog {
+    display: flex;
+    gap: 1.5em;
+    justify-content: space-between;
+}
+
+.blog img {
+    display: block;
+    object-fit: contain;
+    width: 6em;
+}
+
+.blog h3 {
+    margin: 0 auto;
+    color: var(--Grayish-blue);
+    font-size: 2em;
+}
+
+.blog h4 {
+    margin: .5em auto ;
+    font-weight: 800;
+}
+
+.blog p {
+    font-size: .8em;
+    line-height: 1.5em;
+    color: var(--Dark-grayish-blue);
+}
+
+@media screen and (min-width: 800px) {
+    body {
+        width: 80%;
+        margin: auto;
+    }
+
+    main {
+        margin-top: 2em;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 19em 1fr 1fr;
+        grid-template-areas: 
+            "main main side"
+            "main main side"
+            "footer footer footer"
+        ;
+        gap: 2em;
+    }
+
+    .container-main {
+        grid-area: main;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 19em 1fr;
+        grid-template-areas: 
+            "image image"
+            "title content";
+        gap: 1em;
+    }
+
+    .img {
+        grid-area: image;
+        content: unset;
+        background: url(assets/images/image-web-3-desktop.jpg);
+        background-size: cover;
+    }
+
+    .container-main h2 {
+        grid-area: title;
+        margin: 0 auto;
+        font-size: 3.5em;
+        place-self: center;
+    }
+
+    .content {
+        grid-area: content;
+        display: flex;
+        flex-direction: column;
+        align-items: baseline;
+        padding: 1em;
+    }
+
+    .content p {
+        font-size: 1em;
+        line-height: 1.7em;
+        margin-bottom: 3em;
+    }
+
+    .button:hover {
+        cursor: pointer;
+        background-color: var(--Very-dark-blue);
+        color: white;
+        transition: .3s;
+    }
+
+    .container-asside {
+        grid-area: side;
+        padding: 0 1.5em;
+        margin: 0;
+    }
+
+    .container-asside h2 {
+        font-size: 2.5em;
+        margin-bottom: 0;
+    }
+    .contaner-asside h3 {font-size: 1.5em;}
+    .container-asside h3:hover {
+        cursor: pointer;
+        color: var(--Soft-orange);
+        transition: .3s;
+    }
+    .container-asside p {font-size: 1em;}
+
+    .container-bottom {
+        grid-area: footer;
+        margin-top: 2em;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas: "One Two Three";
+        gap: 2em;
+    }
+
+    .container-bottom h4:hover {
+        cursor: pointer;
+        color: var(--Soft-red);
+        transition: .3s;
+    }
+
+    .blog-item-one {grid-area: One;}
+    .blog-item-two {
+        grid-area: Two; 
+        padding-left: .5em;
+    }
+    .blog-item-three {grid-area: Three;}
+}
